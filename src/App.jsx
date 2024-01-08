@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Landing from "./Layout/Landing";
 import Navigation from "./Layout/Navigation";
 import Home from "./Layout/Home";
@@ -10,9 +9,7 @@ function App() {
   return (
     <div className="bg-background-1 flex h-screen flex-col items-center justify-center pb-[150px]">
       <Navigation></Navigation>
-      {!isLoading &&
-        // Only render Home component if authenticated
-        (isAuthenticated ? <Home user={user} /> : <Landing />)}
+      {!isLoading && (isAuthenticated ? <Home user={user} /> : <Landing />)}
     </div>
   );
 }
